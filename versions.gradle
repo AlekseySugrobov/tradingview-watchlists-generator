@@ -1,0 +1,4 @@
+ext {
+    testContainersVersion = '1.19.5'
+    postgresDriverVersion = '42.6.0'
+}
