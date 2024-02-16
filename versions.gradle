@@ -3,4 +3,5 @@ ext {
     postgresDriverVersion = '42.6.0'
     lombokVersion = '1.18.30'
     apacheCommonsVersion = "3.14.0"
+    jsonPathVersion = "2.9.0"
 }

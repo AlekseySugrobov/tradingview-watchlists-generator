@@ -19,11 +19,13 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation "org.springframework.boot:spring-boot-starter-web"
 	implementation "org.postgresql:postgresql:$postgresDriverVersion"
 	compileOnly "org.projectlombok:lombok:$lombokVersion"
 	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
 	implementation "org.apache.commons:commons-lang3:$apacheCommonsVersion"
 	implementation "org.liquibase:liquibase-core"
+	implementation "com.jayway.jsonpath:json-path:$jsonPathVersion"
 
 
 	testCompileOnly "org.projectlombok:lombok:$lombokVersion"
