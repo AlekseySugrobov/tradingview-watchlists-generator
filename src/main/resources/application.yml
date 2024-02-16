@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: tv-watchlist-generator
+  datasource:
+    url:
+    username:
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
