@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: TVWG-2
+      author: sugrobov.al
+      changes:
+        - insert:
+            tableName: dat_exchanges
+            columns:
+              - column:
+                  name: id
+                  value: eac6b7c3-52d3-4730-b6c0-5588b96c8d17
+              - column:
+                  name: name
+                  value: MEXC
+              - column:
+                  name: url
+                  value: https://mexc.com/
+        - insert:
+            tableName: dat_contracts
+            columns:
+              - column:
+                  name: id
+                  value: d703ed76-133a-4958-8e35-3e08b77cc467
+              - column:
+                  name: exchange_id
+                  value: eac6b7c3-52d3-4730-b6c0-5588b96c8d17
+              - column:
+                  name: type
+                  value: FUTURES
+              - column:
+                  name: method
+                  value: https://futures.mexc.com/api/v1/contract/detailV2

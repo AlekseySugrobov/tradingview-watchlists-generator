@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: TVWG-1
+      author: sugrobov.al
+      changes:
+        - createTable:
+            tableName: dat_exchanges
+            remarks: Биржи
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: exchanges_pk
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: url
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+        - createTable:
+            tableName: dat_contracts
+            remarks: Контракты
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: contracts_pk
+                    nullable: false
+              - column:
+                  name: exchange_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: contracts_exchanges_fk
+                    references: dat_exchanges(id)
+              - column:
+                  name: method
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(10)
+                  constraints:
+                    checkConstraint: check ((type)::text = ANY ((ARRAY ['SPOT'::character varying, 'FUTURES'::character varying])::text[]))
